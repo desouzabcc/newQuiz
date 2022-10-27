@@ -62,8 +62,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0% 0% 0% 5%;
-    height: 10vh;
+   height: 15vh;
 }
 
 .direita1 {
@@ -72,18 +71,15 @@
     justify-content: center;
     width: 50%;
     background-color: rgb(243, 243, 243);
-    padding: 0% 0% 0% 5%;
     text-align: center;
     height: 80vh;
 }
 
 .esquerda1{
     display: flex;
-    
     align-items: center;
     width: 50%;
     background-color: #f5f5f5;
-    padding: 0% 0% 0% 5%;
     width: 50%;
     height: 80vh;
 }
@@ -91,7 +87,6 @@
 .quiz_nerd {
     font-size: 75px;
     font-weight: 100;
-
 }
 
 .bem_vindo {
@@ -101,7 +96,7 @@
 }
 
 .yellowQuiz{
-    color: #f1ff0a;
+    color: #FFFF00;
 }
 
 #divLeft{
@@ -146,7 +141,7 @@
 }
 
 .yeloowQuizBack{
-    background-color: #f1ff0a;
+    background-color: #FFFF00;
 }
 .yeloowQuizBack:hover {
     cursor: pointer;
@@ -177,20 +172,20 @@
 }
 
 #leftSide{
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: inline-block;
     float: left;
-    padding: 20px;
+    padding-top: 20px;
     text-align: center;
 }
 
 #rightSide{
-    width: 50%;
+    width: 100%;
     display: inline-block;
     background-color: #f5f5f5;
-    height: 100%;
-    min-height: 100%;
+    height: 90%;
+    min-height: 90%;
 }
 #clock {
     padding-left: 30%;
@@ -262,7 +257,6 @@
     padding: 1.5rem;
     border: 1px solid #ececec;
     border-radius: 5px;
-    margin-bottom: 2rem;
 }
 
  .pontuacao ol li {
