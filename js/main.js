@@ -6,6 +6,25 @@ let somAcerto   = document.querySelector('#som_tecla_pom')
 let somErro     = document.querySelector('#som_tecla_clap')
 let somAplausos = document.querySelector('#som_tecla_tim')
 
+
+function save(){
+    let valorDoNome = document.querySelector('.playerName').value;
+     ('userName', valorDoNome);
+}
+function load(){
+    let usuario = document.querySelector('#usuario');
+    let nome = window.localStorage.getItem('userName');
+    usuario.textContent = nome;
+}
+
+let name = document.getElementById('playName')
+let questionName = document.getElementById('usuario')
+questionName.value = name.value;
+
+function erase(){
+    window.localStorage.removeItem('userName');
+}
+
 let pontos = 0 // pontos para o placar
 let placar = 0 // placar
 
@@ -33,7 +52,7 @@ const q0 = {
     alternativaC : "Alternativa C",
     alternativaD : "Alternativa D",
     correta      : "0",
-    imagem       : "images/quest01.png",
+    imagem       : "img/quest01.png",
 }
 
 const q1 = {
@@ -44,7 +63,7 @@ const q1 = {
     alternativaC : "Will",
     alternativaD : "Eleven",
     correta      : "Dustin",
-    image        : "images/quest01.png",
+    image        : "img/quest01.png",
 }
 
 const q2 = {
@@ -55,7 +74,7 @@ const q2 = {
     alternativaC : "Bandeiras Mundiais",
     alternativaD : "Diversão com bandeiras",
     correta      : "Diversão com bandeiras",
-    image        : "images/quest02.png",
+    image        : "img/quest02.png",
 }
 
 const q3 = {
@@ -66,7 +85,7 @@ const q3 = {
     alternativaC : "FN-9854",
     alternativaD : "FN-2832",
     correta      : "FN-2187",
-    image        : "images/quest03.png",
+    image        : "img/quest03.png",
 }
 
 const q4 = {
@@ -77,7 +96,7 @@ const q4 = {
     alternativaC : "Uma lata de cerveja",
     alternativaD : "Um refrigerante",
     correta      : "Uma lata de cerveja",
-    image        : "images/quest04.png",
+    image        : "img/quest04.png",
 }
 
 const q5 = {
@@ -88,7 +107,7 @@ const q5 = {
     alternativaC : "Tank",
     alternativaD : "Cypher",
     correta      : "Cypher",
-    image        : "images/quest05.png",
+    image        : "img/quest05.png",
 }
 
 const q6 = {
@@ -99,7 +118,7 @@ const q6 = {
     alternativaC : "Gandalf",
     alternativaD : "Khamul",
     correta      : "Khamul",
-    image        : "images/quest06.png",
+    image        : "img/quest06.png",
 }
 
 const q7 = {
@@ -110,7 +129,7 @@ const q7 = {
     alternativaC : "Ho-oH",
     alternativaD : "Metapod",
     correta      : "Ho-oH",
-    image        : "images/quest07.png",
+    image        : "img/quest07.png",
 }
 
 const q8 = {
@@ -121,7 +140,7 @@ const q8 = {
     alternativaC : "Deysy e Charlie",
     alternativaD : "Billy e Tommy",
     correta      : "Billy e Tommy",
-    image        : "images/quest08.png",
+    image        : "img/quest08.png",
 }
 
 const q9 = {
@@ -132,7 +151,7 @@ const q9 = {
     alternativaC : "Rainha Vitória",
     alternativaD : "The Curator",
     correta      : "Rainha Vitória",
-    image        : "images/quest09.png",
+    image        : "img/quest09.png",
 }
 
 
@@ -144,7 +163,7 @@ const q10 = {
     alternativaC : "Vinho",
     alternativaD : "Roxo",
     correta      : "Vinho",
-    image        : "images/quest10.png",
+    image        : "img/quest10.png",
 }
 
 // CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
@@ -174,13 +193,6 @@ b.setAttribute('value', '1B')
 c.setAttribute('value', '1C')
 d.setAttribute('value', '1D')
 
-let nome;
-
-function save() {
-    nome = document.getElementsByClassName('playerName');
-    document.getElementById('usuario').value = nome.value;
-}
-
 // PARA MONTAR AS PROXIMAS QUESTOES
 function proximaQuestao(nQuestao) {
     numero.textContent = nQuestao
@@ -195,20 +207,6 @@ function proximaQuestao(nQuestao) {
     c.setAttribute('value', nQuestao+'C')
     d.setAttribute('value', nQuestao+'D')
     imagem.src =  questoes[nQuestao].image
-}
-
-function bloquearAlternativas() {
-    a.classList.add('bloqueado')
-    b.classList.add('bloqueado')
-    c.classList.add('bloqueado')
-    d.classList.add('bloqueado')
-}
-
-function desbloquearAlternativas() {
-    a.classList.remove('bloqueado')
-    b.classList.remove('bloqueado')
-    c.classList.remove('bloqueado')
-    d.classList.remove('bloqueado')
 }
 
 function verificarSeAcertou(nQuestao, resposta) {
@@ -337,7 +335,7 @@ function fimDoJogo() {
     setTimeout(function() {
         pontos = 0 // zerar placar
         location.reload();
-    }, 10000)
+    }, 2000)
 }
 
 function startTimer(duration, display) {
