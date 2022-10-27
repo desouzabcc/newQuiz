@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>QuizNerd - O Quiz do PAFT</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    </head>
+    <body>
+        <div class="pagina">
+            <!-- página principal -->
+            <div class="principal" id="home">
+                <div class="direita">
+                    <div id="divLeft">
+                        <h1 class="quiz_nerd">Quiz<span class="yellowQuiz" style="margin-left: -5px;">Nerd</span></h1>
+                        <br>
+                        <p class="bem_vindo">Bem vindo ao nosso Quiz <br> PAFT</p>
+                        <br>
+                        <form action="#perguntas">
+                            <input class="playerName" type="text" placeholder="Digite o seu nome" required>
+                            <br><br>
+                            <button class="yeloowQuizBack start">INICIAR</button>
+                            <span id="userHidden" style="display: none"> </span>
+                            <br>
+                        </form>
+                        <p id="footHome"><small>Orgulhosamente desenvolvido por: Alexandre, Douglas e Rafael</small></p>
+                    </div>
+                </div>
+                <div class="esquerda">
+                    <div id="divRight">
+                        <img src="images/Logo_Quiz_Nerd.svg" style="width: 100%; padding-bottom: 55%;">
+                    </div>
+                </div>
+            </div>
+            <!--página das questões -->
+            <div class="principal wrap-reverse" id="perguntas">
+
+                <!--cabeçalho-->
+                <div class="central">
+                    <div id="header">
+                        <h1>Quiz<span class="yellowQuiz">Nerd</span></h1>
+                        <p id="clock">02:00</p>
+                        <p class="avatar_nome"><img src="images/Avatar_Nerd.svg" class="avatar"><span id="usuario">Nome</span></p>
+
+                        <article class='centro' id='instrucoes'>
+                            <small>Leia a questão e clique na resposta correta</small>
+                        </article>
+                    </div>
+                </div>
+
+                <!--imagem-->
+                <div class="esquerda1">
+                    <img id="imgQuest" src="images/quest01.png" style="width: 100%; height:80%">
+                </div>
+                <!--questões-->
+                <div class="direita1">
+                    <div id="rightSide">
+                        <article class='questoes'>
+                            <header class='questao'>
+                                <h3 style="text-align: center ;"><small>Questão n.º <span id='numQuestao'></span> de 10</small></h3><br>
+                                <h4 id='pergunta'></h4>
+                            </header>
+                            <div class='corpo'>
+                                <ol type='A' id='alternativas'>
+                                    <li id='a' value='1A' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                                    <li id='b' value='1B' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                                    <li id='c' value='1C' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                                    <li id='d' value='1D' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                                </ol>
+                            </div>
+                        </article>
+                        <article class='centro' id='aviso'>
+                            Questão <span id='numero'></span> de <span id='total'></span>
+                        </article>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+            <!--página de resultados -->
+            <div class="principal wrap-reverse" id="perguntas">
+
+                <!--cabeçalho-->
+                <div class="central">
+                    <div id="header">
+                        <h1>Quiz<span class="yellowQuiz">Nerd</span></h1>
+                        <p id="clock"></p>
+                        <p class="avatar_nome"><img src="images/Avatar_Nerd.svg" class="avatar"><span id="usuario">Nome</span></p>
+                    </div>
+                </div>
+
+                    <!--imagem-->
+                <div class="esquerda1">
+                    <div id="leftSide">
+                        <!-- 
+                            De 0 a 4 FRACO - questFraco.png
+                            De 5 a 8 Normal - questNormal.png
+                            De 9 a 10 Ótimo - questForte.png
+                        -->
+                        <img id="imgPunct" style="align-items: center;" src="images/questFraco.png">
+                    </div>
+                </div>
+                <!--questões-->
+                <div class="direita1">
+                    <div id="rightSide">
+                        <article class='pontuacao'>
+                            <header>
+                                <h2 style="text-align: center ;">PONTUAÇÃO</h2><br>
+                            </header>
+                            <div>
+                                <ol type='P'>
+                                    <li id='pontA' value='1PA'> Rodrigo - 10 pts</li>
+                                    <li id='pontB' value='1PB'> Alexandre - 9 pts</li>
+                                    <li id='pontC' value='1PC'> Marcela - 6 pts</li>
+                                    <li id='PontD' value='1PD'> Andreia - 5 pts</li>
+                                    <li id='PontE' value='1PE'> Andre - 4 pts</li>
+                                </ol>
+                            </div>
+                        </article>
+                        <a href="#home">
+                            <button class="yeloowQuizBack reset">REINICIAR</button>
+                        </a>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--    <script src='js/main.js'></script>-->
+    </body>
+</html>
